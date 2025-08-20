@@ -1,9 +1,10 @@
-from fastapi import APIRouter  # <-- Новый импорт!
-from app.main import app       # Импортируем экземпляр app
+# app/api/endpoints.py
+from fastapi import APIRouter  # <-- Импортируем роутер
 
-# Создаем роутер вместо того, чтобы использовать app напрямую
+# Создаем экземпляр роутера. Префикс и теги можно будет добавить позже.
 router = APIRouter()
 
+# Заменяем @app.get на @router.get
 @router.get("/")
 async def read_root():
     return {"message": "Hello World"}
