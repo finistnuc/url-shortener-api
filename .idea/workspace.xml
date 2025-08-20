@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0971985-6ab9-4f3c-af75-d1a1c648cfeb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/endpoints/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/endpoints/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/crud/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/crud/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/endpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/endpoints/hello.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +50,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/api/endpoints" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/api" />
     </key>
@@ -61,5 +72,8 @@
       <updated>1755666545343</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="docker-compose.yml" />
   </component>
 </project>

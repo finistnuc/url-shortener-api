@@ -1,7 +1,6 @@
-# app/api/endpoints.py
+# app/api/endpoints/hello.py
 from fastapi import APIRouter
 
-# Добавляем префикс /hello и тег для документации
 router = APIRouter(prefix="/hello", tags=["Greetings"])
 
 @router.get("/")

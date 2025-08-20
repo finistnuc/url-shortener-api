@@ -1,4 +1,4 @@
-# app/models/url.py
+# app/models/urls.py
 from sqlalchemy import Column, String, Integer, DateTime, func
 from app.models.base import Base
 
