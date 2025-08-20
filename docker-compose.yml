@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # Наш сервис с базой данных PostgreSQL
+  postgres:
+    image: postgres:15-alpine  # Используем легкий образ PostgreSQL 15
+    container_name: url_shortener_db
+    environment:
+      - POSTGRES_DB=url_shortener_db  # Имя базы данных (должно совпадать с connection string!)
+      - POSTGRES_USER=postgres         # Логин (по умолчанию)
+      - POSTGRES_PASSWORD=postgres     # Пароль (по умолчанию, НИКОГДА не используйте в продакшене!)
+    ports:
+      - "5432:5432"  # Пробрасываем порт 5432 из контейнера на вашу локальную машину
+    volumes:
+      # Постоянное хранилище для данных БД, чтобы они не пропали при перезапуске контейнера
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      # Проверка, что база данных готова принимать подключения
+      test: ["CMD-SHELL", "pg_isready -U postgres -d url_shortener_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # (Опционально) Сервис с админкой для базы данных - очень удобно!
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: url_shortener_pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"  # Откроем pgAdmin на localhost:5050
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+# Объявляем том для хранения данных
+volumes:
+  postgres_data:
